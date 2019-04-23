@@ -22,6 +22,9 @@ class NavBar extends Component {
                         <li className="nav-item active">
                             <NavLink className="nav-link" to="/contact">Contact <span className="sr-only">(current)</span></NavLink>
                         </li>
+                        <li className="nav-item active">
+                            <NavLink className="nav-link" to="/add-post">Add Post <span className="sr-only">(current)</span></NavLink>
+                        </li>
                     </ul>
                 </div>
                 </nav>

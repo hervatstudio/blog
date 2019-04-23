@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Post from './components/Post';
 import About from './components/About';
 import Contact from './components/Contact';
+import AddPost from './components/AddPost';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -25,6 +26,7 @@ class App extends Component {
               <Route exact path = '/' component={Home}/>
               <Route path = '/about' component={About}/>
               <Route path = '/contact' component={Contact}/>
+              <Route path = '/add-post' component={AddPost}/>
               <Route path = '/:post_id' component={Post}/>
             </Switch>
           </div>
