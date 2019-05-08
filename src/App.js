@@ -5,7 +5,6 @@ import Post from './components/Post';
 import About from './components/About';
 import Contact from './components/Contact';
 import AddPost from './components/AddPost';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 

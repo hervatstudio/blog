@@ -5,14 +5,22 @@ class AddPost extends Component {
     state = { 
         title: ''
     }
-    componentDidMount(){
-        axios.post('https://jsonplaceholder.typicode.com/posts').then(res => {
-            console.log(res.data);
-        })
-    }
+    // componentDidMount(){
+    //     axios.post('https://jsonplaceholder.typicode.com/posts', 'sdfsdf').then(res => {
+    //         console.log(res.data);
+    //     })
+    // }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        const post = {
+            title: this.state.title
+        }
+        axios.post('https://jsonplaceholder.typicode.com/posts', {post} )
+        .then(res => {
+            // console.log(res);
+            console.log(res.data);
+        })
+        // console.log(this.state);
     }
     handleChange = (e) => {
         this.setState({

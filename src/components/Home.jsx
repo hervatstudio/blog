@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import logo from '../logo.jpg';
 
+import { connect } from 'react-redux';
+
 class Home extends Component {
-    state = {
-        posts: [ ]
-      }
+    // state = {
+    //     posts: [ ]
+    //   }
       
-      componentDidMount(){
-        axios.get("https://jsonplaceholder.typicode.com/posts").then(res => {
-          this.setState({
-            posts: res.data
-          })
-          console.log(res.data)
-        })
-      }
+      // componentDidMount(){
+      //   axios.get("https://jsonplaceholder.typicode.com/posts").then(res => {
+      //     this.setState({
+      //       posts: res.data
+      //     })
+      //     console.log(res.data)
+      //   })
+      // }
     render() { 
-        const { posts } = this.state;
+        const { posts } = this.props;
+        // console.log(this.props);
+
         const PostList = posts.map(post => {
         let PostBody = post.body.substring(0,20) + '...';
+
         return (
             <div className="card mb-2" key={post.id}>
                 <div className="card-body">
@@ -36,10 +41,16 @@ class Home extends Component {
         })
         return ( 
             <div>
-                {PostList}
+                { PostList }
             </div>
          );
     }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+}
  
-export default Home;
+export default connect(mapStateToProps)(Home);
